@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
               textTheme: CupertinoTextThemeData(
                   navTitleTextStyle: TextStyle(
                       color: Colors.black,
-                      fontSize: 16,
+                      fontSize: 14,
                       fontWeight: FontWeight.w600),
                   navActionTextStyle: TextStyle(color: Colors.black)),
               primaryColor: Colors.white,

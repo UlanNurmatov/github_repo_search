@@ -24,14 +24,18 @@ class ResultsScrollView extends StatelessWidget {
             margin: EdgeInsets.fromLTRB(16.0, 19.0, 16.0, 8.0),
             child: Column(children: [
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Text('ПО ЗАПРОСУ: '),
+                Text(
+                  'ПО ЗАПРОСУ: ',
+                  style: TextStyle(fontSize: 10.0, color: Colors.grey),
+                ),
                 Text('${query.toUpperCase()}',
-                    style: TextStyle(color: Colors.blue))
+                    style: TextStyle(color: Colors.blue, fontSize: 10.0))
               ]),
               SizedBox(
                 height: 8.0,
               ),
-              Text('НАЙДЕНО: ${result.total_count}')
+              Text('НАЙДЕНО: ${result.total_count}',
+                  style: TextStyle(fontSize: 10.0, color: Colors.grey))
             ])),
       ),
       SliverPadding(
@@ -41,7 +45,7 @@ class ResultsScrollView extends StatelessWidget {
             final item = result.items[index];
             return Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
+                  border: Border.all(color: Colors.grey, width: 0.5),
                   borderRadius: BorderRadius.all(Radius.circular(10.0))),
               margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Column(
@@ -54,7 +58,7 @@ class ResultsScrollView extends StatelessWidget {
                         child: Text(
                           item.name,
                           style: TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: 16.0),
+                              fontWeight: FontWeight.w600, fontSize: 12.0),
                         ),
                       ),
                       Container(
@@ -71,7 +75,7 @@ class ResultsScrollView extends StatelessWidget {
                               child: Icon(
                                 Icons.star_border,
                                 color: Colors.white,
-                                size: 18.0,
+                                size: 16.0,
                               ),
                             ),
                             Container(
@@ -79,7 +83,7 @@ class ResultsScrollView extends StatelessWidget {
                               child: Text(item.stargazers_count.toString(),
                                   style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 12.0,
+                                      fontSize: 10.0,
                                       fontWeight: FontWeight.w600)),
                             )
                           ],
@@ -90,6 +94,8 @@ class ResultsScrollView extends StatelessWidget {
                   Row(
                     children: [
                       Container(
+                        height: 30.0,
+                        width: 30.0,
                         margin: EdgeInsets.fromLTRB(16.0, 4.0, 0.0, 0.0),
                         child: CircleAvatar(
                             radius: 20,
@@ -102,13 +108,14 @@ class ResultsScrollView extends StatelessWidget {
                       Text(
                         item.owner.login,
                         style: TextStyle(
-                            fontSize: 14.0, fontWeight: FontWeight.w400),
+                            fontSize: 10.0, fontWeight: FontWeight.w400),
                       )
                     ],
                   ),
                   Container(
                     margin: EdgeInsets.only(top: 8.0, bottom: 12.0),
                     child: Divider(
+                      color: Colors.grey,
                       indent: 16.0,
                       endIndent: 16.0,
                     ),
@@ -119,13 +126,13 @@ class ResultsScrollView extends StatelessWidget {
                         margin: EdgeInsets.fromLTRB(16.0, 0.0, 0.0, 16.0),
                         child: Text(
                           'Обновлено: ',
-                          style: TextStyle(color: Colors.grey, fontSize: 16.0),
+                          style: TextStyle(color: Colors.grey, fontSize: 10.0),
                         ),
                       ),
                       Container(
                           margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 16.0),
                           child: Text(getDate(item.updated_at),
-                              style: TextStyle(fontSize: 16.0)))
+                              style: TextStyle(fontSize: 10.0)))
                     ],
                   )
                 ],
